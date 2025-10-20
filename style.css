@@ -1,6 +1,6 @@
 body {
   background-color: #ffffff;
-  transition: background 0.5s ease;
+  transition: background 0.15s ease;
   height: 100vh;
   display: flex;
   justify-content: center;
