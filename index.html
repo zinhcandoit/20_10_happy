@@ -4,63 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>20/10 zui :3</title>
-  <style>
-    body {
-      background-color: #ffffff;
-      transition: background 0.5s ease;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    button {
-      border: none;
-      background: none;
-      cursor: pointer;
-    }
-
-    button img {
-      width: 120px;
-      height: 120px;
-    }
-    button:hover img{
-      content: url('asset/envelope_open.png');
-    }
-
-    /* GIF sau khi click */
-    #after-gif {
-      display: none;
-      position: fixed;
-      top: 45%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
-      width: 300px;
-    }
-
-    /* Dòng chữ chúc */
-    #message {
-      display: none;
-      position: fixed;
-      bottom: 8%;
-      width: 100%;
-      text-align: center;
-      font-size: 2rem;
-      font-family: "Brush Script MT", "Lucida Handwriting", cursive;
-      font-weight: bold;
-      color: #000000;
-      text-shadow: 2px 2px 4px #ff69b4, 0 0 10px #ffb6c1;
-      animation: fadeIn 1.5s ease-in forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -69,36 +13,24 @@
   </button>
 
   <!-- GIF xuất hiện sau khi click -->
-  <img id="after-gif" src="asset/give_flower.gif" alt="Celebration">
+  <div class="page page-2">
+    <img class="page-gif" src="asset/give_flower.gif" alt="Celebration">
+    <!-- Dòng chữ chúc -->
+    <div class="page-message">Mừng ngày 20/10 vui vẻ :33 💖</div>
+    <button id="next-to-page-3" aria-label="Đi tới trang 3">
+      <img src="asset/arrow.webp" alt="Tiếp tục">
+    </button>
+  </div>
 
-  <!-- Dòng chữ chúc -->
-  <div id="message">Chúc bạn có ngày 20/10 tuyệt nhất đời nhé 💖</div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const btn = document.getElementById("intro-btn");
-      const body = document.body;
-      const afterGif = document.getElementById("after-gif");
-      const message = document.getElementById("message");
-
-      btn.addEventListener("click", function () {
-        // Đổi background
-        body.style.backgroundImage = "url('asset/heart_rain.gif')";
-        body.style.backgroundSize = "cover";
-        body.style.backgroundPosition = "center";
-        body.style.backgroundRepeat = "repeat";
-
-        // Ẩn nút
-        btn.style.display = "none";
-
-        // Hiện ảnh GIF và dòng chữ
-        setTimeout(() => {
-          afterGif.style.display = "block";
-          message.style.display = "block";
-        }, 500);
-      });
-    });
-  </script>
+  <div class="page page-3">
+    <img class="page-gif" src="asset/dance.gif" alt="Celebration dance">
+    <!-- Dòng chữ chúc -->
+    <div class="page-message">Chúc chị em cô dì ngày càng...</div>
+    <button id="random-positive-btn">Click me!</button>
+    <img id="give-heart-img" src="asset/give_heart.jpg" alt="Tặng trái tim">
+    <div class="floating-text-layer" aria-hidden="true"></div>
+  </div>
+  <script src="script.js" defer></script>
 
 </body>
 </html>
